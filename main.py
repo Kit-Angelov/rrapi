@@ -10,24 +10,42 @@ from app import constants
 # главный класс инициализирует соединение, логинится и получает список элементов меню
 class RRSurfer:
 
-	def __init__(token):
-		driver = webdriver.PhantomJS() # инициализация веб-драйвера
-		driver.get(config.rr_url) # открытие url
+	def __init__(self, token):
+		self.token = token
+		self.driver = webdriver.PhantomJS() # инициализация веб-драйвера
+		self.driver.get(config.rr_url) # открытие url
 
-		utils.login(driver, token) # логин фгис по токену
+		self.login() # авторизация фгис по токену
 
 		utils.sleep()
 
 		# получение элеменов меню
-		menu_links = driver.find_elements_by_class_name(constants.menu_link_class)
-		search_objects = menu_links[0]
-		orders = menu_links[1]
-		request_owner = menu_links[2]
-		my_account = menu_links[3]
+		menu_links = self.driver.find_elements_by_class_name(constants.menu_link_class)
+		self.search_objects = menu_links[0]
+		self.orders = menu_links[1]
+		self.request_owner = menu_links[2]
+		self.my_account = menu_links[3]
+
+	# авторизация по токену	
+	def login(self):
+		token_list = self.token.split("-")
+		token_input_list = self.driver.find_elements_by_class_name(constants.textfield_class)
+		token_input_list[0].send_keys(token_list[0])
+		utils.sleep()
+		token_input_list[1].send_keys(token_list[1])
+		utils.sleep()
+		token_input_list[2].send_keys(token_list[2])
+		utils.sleep()
+		token_input_list[3].send_keys(token_list[3])
+		utils.sleep()
+		token_input_list[4].send_keys(token_list[4])
+		utils.sleep()
+		enter_but = self.driver.find_element_by_class_name(constants.button_class)
+		enter_but.click()
 
 	# метод поиска и заказа документа по кадастровому номеру(принимает на вход). 
 	# Возвращает номер заявки.
-	def search_object(cad_num):
+	def search_object(self, cad_num):
 		# переход в раздел поиска документа
 		search_objects.click()
 
