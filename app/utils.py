@@ -1,11 +1,10 @@
 import time
-from .config import token
 from .constants import *
 
 def sleep(k=1):
 	time.sleep(1*k)
 
-def login(driver):
+def login(driver, token):
 	token_list = token.split("-")
 	token_input_list = driver.find_elements_by_class_name(textfield_class)
 	token_input_list[0].send_keys(token_list[0])
