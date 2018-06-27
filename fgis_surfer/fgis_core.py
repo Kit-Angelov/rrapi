@@ -2,12 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options 
 import os
-from app import config
-from app import utils
-from app import constants
-from app import ordering
-from app import checking_status
-from app import downloading
+from .app import config
+from .app import utils
+from .app import constants
+from .app import ordering
+from .app import checking_status
+from .app import downloading
 
 
 # главный класс инициализирует соединение, логинится и получает список элементов меню

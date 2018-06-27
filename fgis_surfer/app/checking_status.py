@@ -11,12 +11,12 @@ def check_status(driver, menu_orders, order_num):
 	search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
 	search_order_field.send_keys(order_num)
 
-	utils.sleep(2)
+	utils.sleep()
 
 	search_order_button = driver.find_elements_by_class_name(constants.button_class)[5]
 	search_order_button.click()
 
-	utils.sleep(2)
+	utils.sleep()
 
 	# список запросов на выписки
 	table_elem = driver.find_element_by_class_name(constants.table_order_class)
