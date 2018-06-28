@@ -1,5 +1,5 @@
 from fgis_surfer.fgis_core import RRSurfer
-from fgis_sender import send
+from fgis_sender import send_answer
 import json
 
 
@@ -58,4 +58,4 @@ class FgisWorker:
 			'error': error,
 		}
 		answer_json = json.dumps(answer)
-		send(self.answer_queue, answer_json)
+		send_answer(self.answer_queue, answer_json)

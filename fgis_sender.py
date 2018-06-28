@@ -1,8 +1,8 @@
 import pika
 
 
-def send(queue_name, message):
-	connection = pika.BlockingConnection(pika.ConnectionParameters(host='locahost'))
+def send_answer(queue_name, message):
+	connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 	channel = connection.channel()
 
 	channel.queue_declare(queue=queue_name)
