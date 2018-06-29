@@ -1,22 +1,11 @@
-class Test:
+import types
+import time
 
-	def __init__(self):
-		self.methods = {
-			'first': self.first,
-			'second': self.second
-		}
+def b(**data):
+	print('b:', data)
 
-	def first(self):
-		print('first ok')
+def a(**data):
+	print(data)
+	b(**data)
 
-	def second(self):
-		print('second ok')
-
-	def run(self, method):
-		if method in self.methods:
-			run_method = self.methods[method]
-			run_method()
-
-if __name__ == '__main__':
-	t = Test()
-	t.run('second')
+a(e=4, d=5)

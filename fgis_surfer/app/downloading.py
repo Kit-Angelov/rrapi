@@ -1,9 +1,10 @@
 import os
 from . import utils
 from . import constants
+from . import config
 import requests
 
-def download(driver, menu_orders, order_num, dir_to_download):
+def download(driver, menu_orders, order_num):
 	# переходим в раздел поиска документов
 	menu_orders.click()
 	utils.sleep(10)

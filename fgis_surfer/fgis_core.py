@@ -61,9 +61,9 @@ class RRSurfer:
 		status_text = checking_status.check_status(self.driver, self.menu_orders, order_num)
 		return status_text
 
-	def download_file(self, order_num, dir_to_download):
+	def download_file(self, order_num):
 		self.init_driver()
-		downloading.download(self.driver, self.menu_orders, order_num, dir_to_download)
+		downloading.download(self.driver, self.menu_orders, order_num)
 
 
 
