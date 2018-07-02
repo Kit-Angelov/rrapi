@@ -63,8 +63,8 @@ class RRSurfer:
 
 	def download_file(self, order_num):
 		self.init_driver()
-		downloading.download(self.driver, self.menu_orders, order_num)
-
+		result_download = downloading.download(self.driver, self.menu_orders, order_num)
+		return result_download
 
 
 if __name__ == '__main__':

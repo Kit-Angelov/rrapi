@@ -1,6 +1,7 @@
 import os
 from . import utils
 from . import constants
+from .config import status_dict
 
 def check_status(driver, menu_orders, order_num):
 	# переходим в раздел поиска документов
@@ -24,4 +25,9 @@ def check_status(driver, menu_orders, order_num):
 	object_item = object_list[0].find_elements_by_class_name(constants.table_order_cell_class)[2]
 
 	print(object_item.text)
-	return object_item.text
+	status_text = str(object_item.text).lower()
+	status_code = status_dict.get(status_text, None)
+	if status_code is None:
+		return status_dict['another']
+	else:
+		return status_code

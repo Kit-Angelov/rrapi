@@ -27,7 +27,7 @@ class FgisWorker:
 		if isinstance(order_num, str):
 			status = self.rr_surfer.get_status(order_num)
 			print('status {}: {}'.format(order_num, status))
-			self.send('get_status', error='', order_id=self.order_id, order_status=status)
+			self.send('get_status', error=None, order_id=self.order_id, order_status=status)
 		else:
 			pass
 
@@ -37,18 +37,23 @@ class FgisWorker:
 			# order_num = self.rr_surfer.order_document(cad_num)
 			order_num = 'test_order_num'
 			print('order_num: {}'.format(order_num))
-			self.send('to_order', error='', order_id=self.order_id, order_num=order_num)
+			self.send('to_order', error=None, order_id=self.order_id, order_num=order_num)
 		else:
 			pass
 
 	def download(self):
 		order_num = self.message_dict.get('order_num', None)
 		if isinstance(order_num, str):
-			path_to_file = self.rr_surfer.download_file(order_num)
-			print('download_file_path {}: {}'.format(order_num, path_to_file))
-			self.send('download', error='', order_id=self.order_id, order_download_path=download_file_path)
+			result_dict = self.rr_surfer.download_file(order_num)
+			print('RESULT DICT', result_dict)
+			if result_dict['error'] is None:
+				path_to_file = result_dict['path_to_download']
+				print('download_file_path {}: {}'.format(order_num, path_to_file))
+				self.send('download', error=None, order_id=self.order_id, order_download_path=path_to_file)
+			else:
+				print('error', result_dict['error'])
 		else:
-			pass
+			print('error: order_num is not string')
 			
 	def receive(self, body):
 		self.message_dict = json.loads(body)
@@ -79,6 +84,7 @@ class FgisWorker:
 			'order_status': data['order_status']
 		}
 		answer_json = json.dumps(answer)
+		print('answer_get_status: ', answer_json)
 		send_answer(self.answer_queue, answer_json)
 
 	def answer_download(self, answer_type, **data):
@@ -88,10 +94,11 @@ class FgisWorker:
 			'order_download_path': data['order_download_path']
 		}
 		answer_json = json.dumps(answer)
+		print('answer_download: ', answer_json)
 		send_answer(self.answer_queue, answer_json)
 
-	def send(self, answer_type, error='', **data):
-		if error != '':
+	def send(self, answer_type, error=None, **data):
+		if error is not None:
 			print('error', error)
 		else:
 			if answer_type in self.answer_types:

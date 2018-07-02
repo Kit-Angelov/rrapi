@@ -6,7 +6,7 @@ connection = pika.BlockingConnection(pika.ConnectionParameters(
         host='localhost'))
 channel = connection.channel()
 
-channel.queue_declare(queue='rrd_order')
+channel.queue_declare(queue='download_order')
 
 print(' [*] Waiting for messages. To exit press CTRL+C')
 
@@ -17,7 +17,7 @@ def receiver(ch, method, properties, body):
 
 
 channel.basic_consume(receiver,
-                      queue='rrd_order',
+                      queue='download_order',
                       no_ack=True)
 
 channel.start_consuming()
