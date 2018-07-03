@@ -8,29 +8,42 @@ from .app import constants
 from .app import ordering
 from .app import checking_status
 from .app import downloading
+import logging
 
 
 # главный класс инициализирует соединение, логинится и получает список элементов меню
 class RRSurfer:
 
-	def __init__(self, token):
+	def __init__(self, token, log_mode=None):
 		self.token = token
+		if log_mode is not None:
+			self.logger = logging.getLogger(str(log_mode) + '.fgis_core')
+		else:
+			self.logger = logging.getLogger('rrsurfer')
 
 	def init_driver(self):
+		self.logger.info('start driver init')
 		self.driver = webdriver.PhantomJS() # инициализация веб-драйвера
+		self.logger.info('init driver ok')
 		self.driver.set_window_size(840, 480)
+		self.logger.info('set window_size')
 		self.driver.get(config.rr_url) # открытие url
+		self.logger.info('open url {}'.format(config.rr_url))
 
+		self.logger.info('start login')
 		self.login() # авторизация фгис по токену
-
+		self.logger.info('finish login')
 		utils.sleep()
 
 		# получение элеменов меню
+		self.logger.info('getting menu links')
 		menu_links = self.driver.find_elements_by_class_name(constants.menu_link_class)
 		self.menu_search = menu_links[0]
 		self.menu_orders = menu_links[1]
 		self.menu_request_owner = menu_links[2]
 		self.menu_my_account = menu_links[3]
+
+		self.logger.info('[ok] finish init RRSurfer')
 
 	# авторизация по токену	
 	def login(self):
@@ -53,18 +66,18 @@ class RRSurfer:
 	# Возвращает номер заявки.
 	def order_document(self, cad_num):
 		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
-		order_num = ordering.order_document(self.driver, self.menu_search, cad_num)
-		return order_num
+		result_dict = ordering.order_document(self.driver, self.menu_search, cad_num)
+		return result_dict
 
 	def get_status(self, order_num):
 		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
-		status_text = checking_status.check_status(self.driver, self.menu_orders, order_num)
-		return status_text
+		result_dict = checking_status.check_status(self.driver, self.menu_orders, order_num)
+		return result_dict
 
 	def download_file(self, order_num):
-		self.init_driver()
-		result_download = downloading.download(self.driver, self.menu_orders, order_num)
-		return result_download
+		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
+		result_dict = downloading.download(self.driver, self.menu_orders, order_num)
+		return result_dict
 
 
 if __name__ == '__main__':
