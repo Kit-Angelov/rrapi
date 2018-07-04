@@ -40,7 +40,7 @@ class FgisWorker:
 					self.logger.error('error', result_dict['error'])
 					self.send('get_status', error=result_dict['code'], order_id=self.order_id)
 			except Exception as e:
-				self.logger.error('error: unknown')
+				self.logger.error('error: {}'.format(e))
 		else:
 			self.logger.error('error: order_num is not string')
 			self.send('get_status', error='300', order_id=self.order_id)
@@ -58,7 +58,7 @@ class FgisWorker:
 					self.logger.error('error', result_dict['error'])
 					self.send('to_order', error=result_dict['code'], order_id=self.order_id)
 			except Exception as e:
-				self.logger.error('error: unknown')
+				self.logger.error('error: {}'.format(e))
 		else:
 			self.logger.error('error: cad_num is not string')
 			self.send('to_order', error='300', order_id=self.order_id)
@@ -76,7 +76,7 @@ class FgisWorker:
 					self.logger.error('error', result_dict['error'])
 					self.send('download', error=result_dict['code'], order_id=self.order_id)
 			except Exception as e:
-				self.logger.error('error: unknown')
+				self.logger.error('error: {}'.format(e))
 		else:
 			self.logger.error('error: order_num is not string')
 			self.send('download', error='300', order_id=self.order_id)

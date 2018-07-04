@@ -4,3 +4,338 @@
 2018-07-03 19:00:32,097 - status - INFO -  [*] Start Consumer | Mode status
 2018-07-03 19:00:32,110 - status - INFO -  [*] Start Consumer | Mode status
 2018-07-03 19:00:32,115 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 01:20:29,883 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 01:20:30,210 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 01:20:30,226 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 10:15:35,091 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 10:15:35,178 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 10:15:35,181 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 10:44:29,576 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 14:18:35,537 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:18:35,537 - status.fgis_core - INFO - start driver init
+2018-07-04 14:18:36,555 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:18:36,560 - status.fgis_core - INFO - set window_size
+2018-07-04 14:18:39,334 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:18:39,334 - status.fgis_core - INFO - start login
+2018-07-04 14:18:44,524 - status.fgis_core - INFO - finish login
+2018-07-04 14:18:45,525 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:18:45,534 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:18:45,535 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:32:15,212 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:32:15,212 - status.fgis_core - INFO - start driver init
+2018-07-04 14:32:16,234 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:32:16,240 - status.fgis_core - INFO - set window_size
+2018-07-04 14:32:17,286 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:32:17,286 - status.fgis_core - INFO - start login
+2018-07-04 14:32:22,646 - status.fgis_core - INFO - finish login
+2018-07-04 14:32:23,648 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:32:23,666 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:32:23,667 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:32:35,244 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:32:35,245 - status.fgis_core - INFO - start driver init
+2018-07-04 14:32:36,261 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:32:36,266 - status.fgis_core - INFO - set window_size
+2018-07-04 14:32:38,235 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:32:38,235 - status.fgis_core - INFO - start login
+2018-07-04 14:32:43,589 - status.fgis_core - INFO - finish login
+2018-07-04 14:32:44,590 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:32:44,608 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:32:44,608 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:32:55,263 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:32:55,268 - status.fgis_core - INFO - start driver init
+2018-07-04 14:32:56,282 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:32:56,286 - status.fgis_core - INFO - set window_size
+2018-07-04 14:32:57,592 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:32:57,592 - status.fgis_core - INFO - start login
+2018-07-04 14:33:03,001 - status.fgis_core - INFO - finish login
+2018-07-04 14:33:04,002 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:33:04,019 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:33:04,020 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:33:15,287 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:33:15,287 - status.fgis_core - INFO - start driver init
+2018-07-04 14:33:16,305 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:33:16,310 - status.fgis_core - INFO - set window_size
+2018-07-04 14:33:17,833 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:33:17,833 - status.fgis_core - INFO - start login
+2018-07-04 14:33:23,072 - status.fgis_core - INFO - finish login
+2018-07-04 14:33:24,074 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:33:24,094 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:33:24,095 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:33:35,323 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:33:35,323 - status.fgis_core - INFO - start driver init
+2018-07-04 14:33:36,336 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:33:36,340 - status.fgis_core - INFO - set window_size
+2018-07-04 14:33:52,389 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:33:52,390 - status.fgis_core - INFO - start login
+2018-07-04 14:33:57,633 - status.fgis_core - INFO - finish login
+2018-07-04 14:33:58,634 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:33:58,643 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:33:58,643 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:33:58,643 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:33:58,644 - status.fgis_core - INFO - start driver init
+2018-07-04 14:33:59,657 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:33:59,661 - status.fgis_core - INFO - set window_size
+2018-07-04 14:34:11,908 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:34:11,909 - status.fgis_core - INFO - start login
+2018-07-04 14:34:17,117 - status.fgis_core - INFO - finish login
+2018-07-04 14:34:18,117 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:34:18,126 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:34:18,126 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:34:18,127 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:34:18,127 - status.fgis_core - INFO - start driver init
+2018-07-04 14:34:19,143 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:34:19,147 - status.fgis_core - INFO - set window_size
+2018-07-04 14:34:32,029 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:34:32,029 - status.fgis_core - INFO - start login
+2018-07-04 14:34:37,255 - status.fgis_core - INFO - finish login
+2018-07-04 14:34:38,257 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:34:38,266 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:34:38,266 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:34:38,267 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:34:38,267 - status.fgis_core - INFO - start driver init
+2018-07-04 14:34:39,282 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:34:39,286 - status.fgis_core - INFO - set window_size
+2018-07-04 14:34:40,138 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:34:40,138 - status.fgis_core - INFO - start login
+2018-07-04 14:34:45,539 - status.fgis_core - INFO - finish login
+2018-07-04 14:34:46,540 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:34:46,558 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:34:46,558 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:34:55,431 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:34:55,431 - status.fgis_core - INFO - start driver init
+2018-07-04 14:34:56,446 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:34:56,451 - status.fgis_core - INFO - set window_size
+2018-07-04 14:34:57,805 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:34:57,805 - status.fgis_core - INFO - start login
+2018-07-04 14:35:03,047 - status.fgis_core - INFO - finish login
+2018-07-04 14:35:04,048 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:35:04,064 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:35:04,064 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:35:15,448 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:35:15,448 - status.fgis_core - INFO - start driver init
+2018-07-04 14:35:16,464 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:35:16,469 - status.fgis_core - INFO - set window_size
+2018-07-04 14:35:18,718 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:35:18,719 - status.fgis_core - INFO - start login
+2018-07-04 14:35:23,945 - status.fgis_core - INFO - finish login
+2018-07-04 14:35:24,946 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:35:24,961 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:35:24,961 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:42:40,625 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:42:40,626 - status.fgis_core - INFO - start driver init
+2018-07-04 14:42:41,647 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:42:41,653 - status.fgis_core - INFO - set window_size
+2018-07-04 14:42:42,852 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:42:42,852 - status.fgis_core - INFO - start login
+2018-07-04 14:42:48,201 - status.fgis_core - INFO - finish login
+2018-07-04 14:42:49,203 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:42:49,227 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:42:49,228 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:43:00,645 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:43:00,646 - status.fgis_core - INFO - start driver init
+2018-07-04 14:43:01,660 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:43:01,665 - status.fgis_core - INFO - set window_size
+2018-07-04 14:43:03,434 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:43:03,435 - status.fgis_core - INFO - start login
+2018-07-04 14:43:08,671 - status.fgis_core - INFO - finish login
+2018-07-04 14:43:09,672 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:43:09,684 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:43:09,684 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:43:20,674 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:43:20,675 - status.fgis_core - INFO - start driver init
+2018-07-04 14:43:21,694 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:43:21,698 - status.fgis_core - INFO - set window_size
+2018-07-04 14:43:22,856 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:43:22,857 - status.fgis_core - INFO - start login
+2018-07-04 14:43:28,072 - status.fgis_core - INFO - finish login
+2018-07-04 14:43:29,075 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:43:29,084 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:43:29,084 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:43:40,701 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:43:40,702 - status.fgis_core - INFO - start driver init
+2018-07-04 14:43:41,730 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:43:41,740 - status.fgis_core - INFO - set window_size
+2018-07-04 14:43:42,682 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:43:42,682 - status.fgis_core - INFO - start login
+2018-07-04 14:43:48,073 - status.fgis_core - INFO - finish login
+2018-07-04 14:43:49,075 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:43:49,098 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:43:49,098 - status.fgis_worker - ERROR - error: unknown
+2018-07-04 14:44:29,351 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 14:44:35,783 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:44:35,784 - status.fgis_core - INFO - start driver init
+2018-07-04 14:44:36,803 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:44:36,808 - status.fgis_core - INFO - set window_size
+2018-07-04 14:44:44,832 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:44:44,832 - status.fgis_core - INFO - start login
+2018-07-04 14:44:50,130 - status.fgis_core - INFO - finish login
+2018-07-04 14:44:51,131 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:44:51,151 - status.fgis_worker - ERROR - error: list index out of range
+2018-07-04 14:44:55,800 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:44:55,801 - status.fgis_core - INFO - start driver init
+2018-07-04 14:44:56,827 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:44:56,836 - status.fgis_core - INFO - set window_size
+2018-07-04 14:44:58,874 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:44:58,875 - status.fgis_core - INFO - start login
+2018-07-04 14:45:04,312 - status.fgis_core - INFO - finish login
+2018-07-04 14:45:05,314 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:45:05,324 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:45:05,324 - status.fgis_worker - ERROR - error: name 'logging' is not defined
+2018-07-04 14:45:15,826 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:45:15,827 - status.fgis_core - INFO - start driver init
+2018-07-04 14:45:16,844 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:45:16,849 - status.fgis_core - INFO - set window_size
+2018-07-04 14:45:18,802 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:45:18,803 - status.fgis_core - INFO - start login
+2018-07-04 14:45:24,219 - status.fgis_core - INFO - finish login
+2018-07-04 14:45:25,219 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:45:25,229 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:45:25,229 - status.fgis_worker - ERROR - error: name 'logging' is not defined
+2018-07-04 14:46:01,991 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 14:46:01,992 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:46:01,992 - status.fgis_core - INFO - start driver init
+2018-07-04 14:46:03,012 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:46:03,017 - status.fgis_core - INFO - set window_size
+2018-07-04 14:46:06,342 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:46:06,343 - status.fgis_core - INFO - start login
+2018-07-04 14:46:11,582 - status.fgis_core - INFO - finish login
+2018-07-04 14:46:12,585 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:46:12,594 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:46:12,595 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:46:12,634 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:46:27,877 - status.fgis_worker - ERROR - error: list index out of range
+2018-07-04 14:46:27,877 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:46:27,878 - status.fgis_core - INFO - start driver init
+2018-07-04 14:46:28,894 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:46:28,899 - status.fgis_core - INFO - set window_size
+2018-07-04 14:46:30,085 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:46:30,085 - status.fgis_core - INFO - start login
+2018-07-04 14:46:35,462 - status.fgis_core - INFO - finish login
+2018-07-04 14:46:36,462 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:46:36,472 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:46:36,472 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:46:36,509 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:46:51,535 - status.fgis_core.checking_status - INFO - getting search order field
+2018-07-04 14:46:51,573 - status.fgis_core.checking_status - INFO - fill search order field
+2018-07-04 14:46:52,586 - status.fgis_core.checking_status - INFO - getting search order button
+2018-07-04 14:46:52,640 - status.fgis_core.checking_status - INFO - search order button click
+2018-07-04 14:46:53,670 - status.fgis_core.checking_status - INFO - getting object item
+2018-07-04 14:46:53,717 - status.fgis_core.checking_status - INFO - [FINISH] Finish checking status order: 80-43581960
+2018-07-04 14:46:53,717 - status.fgis_worker - INFO - RESULT DICT
+2018-07-04 14:46:53,726 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:46:53,726 - status.fgis_core - INFO - start driver init
+2018-07-04 14:46:54,753 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:46:54,759 - status.fgis_core - INFO - set window_size
+2018-07-04 14:46:55,742 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:46:55,743 - status.fgis_core - INFO - start login
+2018-07-04 14:47:01,097 - status.fgis_core - INFO - finish login
+2018-07-04 14:47:02,099 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:47:02,108 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:47:02,109 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:47:02,148 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:47:17,180 - status.fgis_core.checking_status - INFO - getting search order field
+2018-07-04 14:47:17,213 - status.fgis_core.checking_status - INFO - fill search order field
+2018-07-04 14:47:18,224 - status.fgis_core.checking_status - INFO - getting search order button
+2018-07-04 14:47:18,268 - status.fgis_core.checking_status - INFO - search order button click
+2018-07-04 14:47:19,298 - status.fgis_core.checking_status - INFO - getting object item
+2018-07-04 14:47:19,339 - status.fgis_core.checking_status - INFO - [FINISH] Finish checking status order: 80-43581960
+2018-07-04 14:47:19,340 - status.fgis_worker - INFO - RESULT DICT
+2018-07-04 14:47:19,348 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:47:19,348 - status.fgis_core - INFO - start driver init
+2018-07-04 14:47:20,364 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:47:20,369 - status.fgis_core - INFO - set window_size
+2018-07-04 14:47:23,313 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:47:23,313 - status.fgis_core - INFO - start login
+2018-07-04 14:47:28,505 - status.fgis_core - INFO - finish login
+2018-07-04 14:47:29,507 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:47:29,518 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:47:29,518 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:47:29,560 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:47:44,787 - status.fgis_worker - ERROR - error: list index out of range
+2018-07-04 14:48:56,883 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:48:56,883 - status.fgis_core - INFO - start driver init
+2018-07-04 14:48:57,922 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:48:57,929 - status.fgis_core - INFO - set window_size
+2018-07-04 14:48:59,192 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:48:59,192 - status.fgis_core - INFO - start login
+2018-07-04 14:49:04,604 - status.fgis_core - INFO - finish login
+2018-07-04 14:49:05,606 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:49:05,615 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:49:05,616 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:49:05,650 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:49:20,673 - status.fgis_core.checking_status - INFO - getting search order field
+2018-07-04 14:49:20,721 - status.fgis_core.checking_status - INFO - fill search order field
+2018-07-04 14:49:21,747 - status.fgis_core.checking_status - INFO - getting search order button
+2018-07-04 14:49:21,796 - status.fgis_core.checking_status - INFO - search order button click
+2018-07-04 14:49:22,838 - status.fgis_core.checking_status - INFO - getting object item
+2018-07-04 14:49:22,879 - status.fgis_core.checking_status - INFO - [FINISH] Finish checking status order: 80-43581960
+2018-07-04 14:49:22,879 - status.fgis_worker - INFO - RESULT DICT
+2018-07-04 14:49:34,991 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 14:49:41,131 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:49:41,131 - status.fgis_core - INFO - start driver init
+2018-07-04 14:49:42,156 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:49:42,161 - status.fgis_core - INFO - set window_size
+2018-07-04 14:49:43,395 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:49:43,396 - status.fgis_core - INFO - start login
+2018-07-04 14:49:48,603 - status.fgis_core - INFO - finish login
+2018-07-04 14:49:49,604 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:49:49,613 - status.fgis_worker - ERROR - error: list index out of range
+2018-07-04 14:55:26,394 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:55:26,395 - status.fgis_core - INFO - start driver init
+2018-07-04 14:55:27,409 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:55:27,413 - status.fgis_core - INFO - set window_size
+2018-07-04 14:55:28,589 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:55:28,590 - status.fgis_core - INFO - start login
+2018-07-04 14:55:33,798 - status.fgis_core - INFO - finish login
+2018-07-04 14:55:34,799 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:55:34,808 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:55:34,808 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:55:34,848 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:55:49,861 - status.fgis_core.checking_status - INFO - getting search order field
+2018-07-04 14:55:49,896 - status.fgis_core.checking_status - INFO - fill search order field
+2018-07-04 14:55:50,907 - status.fgis_core.checking_status - INFO - getting search order button
+2018-07-04 14:55:50,946 - status.fgis_core.checking_status - INFO - search order button click
+2018-07-04 14:55:51,977 - status.fgis_core.checking_status - INFO - getting object item
+2018-07-04 14:55:52,002 - status.fgis_core.checking_status - INFO - order status Завершена
+2018-07-04 14:55:52,018 - status.fgis_core.checking_status - INFO - [FINISH] Finish checking status order: 80-43581960
+2018-07-04 14:55:52,018 - status.fgis_worker - INFO - RESULT DICT
+2018-07-04 14:55:52,028 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:55:52,028 - status.fgis_core - INFO - start driver init
+2018-07-04 14:55:53,043 - status.fgis_core - INFO - init driver ok
+2018-07-04 14:55:53,047 - status.fgis_core - INFO - set window_size
+2018-07-04 14:55:54,569 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 14:55:54,569 - status.fgis_core - INFO - start login
+2018-07-04 14:55:59,770 - status.fgis_core - INFO - finish login
+2018-07-04 14:56:00,772 - status.fgis_core - INFO - getting menu links
+2018-07-04 14:56:00,781 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 14:56:00,782 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 14:56:00,818 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 14:59:49,393 - status - INFO -  [*] Start Consumer | Mode status
+2018-07-04 14:59:59,146 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 14:59:59,147 - status.fgis_core - INFO - start driver init
+2018-07-04 15:00:00,168 - status.fgis_core - INFO - init driver ok
+2018-07-04 15:00:00,175 - status.fgis_core - INFO - set window_size
+2018-07-04 15:00:02,180 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 15:00:02,180 - status.fgis_core - INFO - start login
+2018-07-04 15:00:07,567 - status.fgis_core - INFO - finish login
+2018-07-04 15:00:08,568 - status.fgis_core - INFO - getting menu links
+2018-07-04 15:00:08,577 - status.fgis_core - INFO - [ok] finish init RRSurfer
+2018-07-04 15:00:08,577 - status.fgis_core.checking_status - INFO - [START] Start checking status order: 80-43581960
+2018-07-04 15:00:08,621 - status.fgis_core.checking_status - INFO - menu orders click
+2018-07-04 15:00:23,634 - status.fgis_core.checking_status - INFO - getting search order field
+2018-07-04 15:00:23,685 - status.fgis_core.checking_status - INFO - fill search order field
+2018-07-04 15:00:24,716 - status.fgis_core.checking_status - INFO - getting search order button
+2018-07-04 15:00:24,760 - status.fgis_core.checking_status - INFO - search order button click
+2018-07-04 15:00:25,801 - status.fgis_core.checking_status - INFO - getting object item
+2018-07-04 15:00:25,823 - status.fgis_core.checking_status - INFO - order status Завершена
+2018-07-04 15:00:25,842 - status.fgis_core.checking_status - INFO - [FINISH] Finish checking status order: 80-43581960
+2018-07-04 15:00:25,842 - status.fgis_worker - INFO - RESULT DICT
+2018-07-04 15:00:25,849 - status - INFO -  [+] Received Message b'{"method": "get_status", "order_id": 1, "order_num": "80-43581960", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+2018-07-04 15:00:25,849 - status.fgis_core - INFO - start driver init
+2018-07-04 15:00:26,863 - status.fgis_core - INFO - init driver ok
+2018-07-04 15:00:26,868 - status.fgis_core - INFO - set window_size
+2018-07-04 15:00:27,919 - status.fgis_core - INFO - open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+2018-07-04 15:00:27,920 - status.fgis_core - INFO - start login
+2018-07-04 15:00:33,331 - status.fgis_core - INFO - finish login
+2018-07-04 15:00:34,332 - status.fgis_core - INFO - getting menu links
+2018-07-04 15:00:34,341 - status.fgis_worker - ERROR - error: list index out of range

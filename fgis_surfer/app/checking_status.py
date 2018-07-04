@@ -2,6 +2,7 @@ import os
 from . import utils
 from . import constants
 from .config import status_dict
+import logging
 
 def check_status(driver, menu_orders, order_num):
 	logger = logging.getLogger('status.fgis_core.checking_status')
@@ -11,7 +12,7 @@ def check_status(driver, menu_orders, order_num):
 	# переходим в раздел поиска документов
 	menu_orders.click()
 	logger.info('menu orders click')
-	utils.sleep(10)
+	utils.sleep(15)
 
 	# поиск запроса по номеру
 	search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
@@ -37,12 +38,12 @@ def check_status(driver, menu_orders, order_num):
 		logger.error('[ERROR] checking status order: {}'.format(str(order_num)))
 		return {'error': 'no order for check status', 'code': 100}
 
-	logger.info('order status', object_item.text)
+	logger.info('order status {}'.format(str(object_item.text)))
 	status_text = str(object_item.text).lower()
-	status_code = status_dict.get(status_text, None)
+	status_code = status_dict.get(status_text, 600)
 	if status_code is not None:
 		logger.info('[FINISH] Finish checking status order: {}'.format(str(order_num)))
-		return {'error': None, 'status': status_dict['another']}
+		return {'error': None, 'status': status_code}
 	else:
 		logger.error('[ERROR] checking status order: {}'.format(str(order_num)))
 		return {'error': 'checking status error', 'code': '200'}
