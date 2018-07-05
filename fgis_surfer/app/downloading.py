@@ -41,7 +41,7 @@ def download(driver, menu_orders, order_num):
 		link = link_elem.get_attribute('href')
 	except Exception as e:
 		logger.error('[ERROR] downloading doc: {}'.format(str(order_num)))
-		return {'error': 'no order for downloading', 'code': '100'}
+		return {'error': 'no order for downloading'}
 
 	session = requests.Session()
 	cookies = driver.get_cookies()
@@ -69,4 +69,4 @@ def download(driver, menu_orders, order_num):
 		return {'error': None, 'path_to_download': rel_path_to_download}
 	else:
 		logger.error('[ERROR] downloading doc: {}'.format(str(order_num)))
-		return {'error': 'status_code {}'.format(str(response.status_code)), 'code': '200'}
+		return {'error': 'status_code {}'.format(str(response.status_code))}

@@ -38,7 +38,7 @@ class FgisWorker:
 					self.send('get_status', error=None, order_id=self.order_id, order_status=status)
 				else:
 					self.logger.error('error', result_dict['error'])
-					self.send('get_status', error=result_dict['code'], order_id=self.order_id)
+					self.send('get_status', error=result_dict['error'], order_id=self.order_id)
 			except Exception as e:
 				self.logger.error('error: {}'.format(e))
 		else:
@@ -56,7 +56,7 @@ class FgisWorker:
 					self.send('to_order', error=None, order_id=self.order_id, order_num=order_num)
 				else:
 					self.logger.error('error', result_dict['error'])
-					self.send('to_order', error=result_dict['code'], order_id=self.order_id)
+					self.send('to_order', error=result_dict['error'], order_id=self.order_id)
 			except Exception as e:
 				self.logger.error('error: {}'.format(e))
 		else:
@@ -74,7 +74,7 @@ class FgisWorker:
 					self.send('download', error=None, order_id=self.order_id, order_download_path=path_to_file)
 				else:
 					self.logger.error('error', result_dict['error'])
-					self.send('download', error=result_dict['code'], order_id=self.order_id)
+					self.send('download', error=result_dict['error'], order_id=self.order_id)
 			except Exception as e:
 				self.logger.error('error: {}'.format(e))
 		else:

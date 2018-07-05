@@ -36,7 +36,7 @@ def check_status(driver, menu_orders, order_num):
 		logger.info('getting object item')
 	except Exception as e:
 		logger.error('[ERROR] checking status order: {}'.format(str(order_num)))
-		return {'error': 'no order for check status', 'code': 100}
+		return {'error': 'no order for check status'}
 
 	logger.info('order status {}'.format(str(object_item.text)))
 	status_text = str(object_item.text).lower()
@@ -46,4 +46,4 @@ def check_status(driver, menu_orders, order_num):
 		return {'error': None, 'status': status_code}
 	else:
 		logger.error('[ERROR] checking status order: {}'.format(str(order_num)))
-		return {'error': 'checking status error', 'code': '200'}
+		return {'error': 'checking status error'}

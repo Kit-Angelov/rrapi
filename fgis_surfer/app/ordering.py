@@ -2,6 +2,7 @@ import os
 from . import utils
 from . import constants
 import logging
+from .regions import REGIONS
 
 def order_document(driver, menu_search, cad_num):
 	logger = logging.getLogger('order.fgis_core.ordering')
@@ -21,7 +22,15 @@ def order_document(driver, menu_search, cad_num):
 	utils.sleep(5)
 
 	region_input = driver.find_element_by_class_name(constants.filterselect_input_class)
-	region_input.send_keys('Воронежская область')
+
+	region_code = cad_num[:2]
+	region_name = REGIONS.get(str(region_code), None)
+	if region_name is None:
+		logger.error("invalid region code")
+		return {'error': 'invalid region code'}
+
+	logger.error("region name: {}".format(str(region_name)))
+	region_input.send_keys(region_name)
 
 	logger.info('region input')
 
@@ -49,8 +58,8 @@ def order_document(driver, menu_search, cad_num):
 	try:
 		table_result_rows = driver.find_elements_by_class_name(constants.table_cell_cad_num_class)[0]
 	except Exception as e:
-		self.logger.error('[ERROR] Error ordering document: {}'.format(str(cad_num)))
-		return {'error': 'no result for search doc', 'code': 100}
+		logger.error('[ERROR] Error ordering document: {}'.format(str(cad_num)))
+		return {'error': 'no result for search doc'}
 
 	table_result_rows.click()
 
@@ -71,5 +80,5 @@ def order_document(driver, menu_search, cad_num):
 		logger.info('[FINISH] Finish ordering document: {}'.format(str(cad_num)))
 		return {'error': None, 'order_num': order_num}
 	else:
-		self.logger.error('[ERROR] Error ordering document: {}'.format(str(cad_num)))
-		return {'error': 'ordering error', 'code': '200'}
+		logger.error('[ERROR] Error ordering document: {}'.format(str(cad_num)))
+		return {'error': 'ordering error'}
