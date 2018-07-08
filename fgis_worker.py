@@ -48,17 +48,14 @@ class FgisWorker:
 	def to_order(self):
 		cad_num = self.message_dict.get('cad_num', None)
 		if isinstance(cad_num, str):
-			try:
-				result_dict = self.rr_surfer.order_document(cad_num)
-				self.logger.info('RESULT DICT', result_dict)
-				if result_dict['error'] is None:
-					order_num = result_dict['order_num']
-					self.send('to_order', error=None, order_id=self.order_id, order_num=order_num)
-				else:
-					self.logger.error('error', result_dict['error'])
-					self.send('to_order', error=result_dict['error'], order_id=self.order_id)
-			except Exception as e:
-				self.logger.error('error: {}'.format(e))
+			result_dict = self.rr_surfer.order_document(cad_num)
+			self.logger.info('RESULT DICT', result_dict)
+			if result_dict['error'] is None:
+				order_num = result_dict['order_num']
+				self.send('to_order', error=None, order_id=self.order_id, order_num=order_num)
+			else:
+				self.logger.error('error', result_dict['error'])
+				self.send('to_order', error=result_dict['error'], order_id=self.order_id)
 		else:
 			self.logger.error('error: cad_num is not string')
 			self.send('to_order', error='300', order_id=self.order_id)
@@ -66,17 +63,14 @@ class FgisWorker:
 	def download(self):
 		order_num = self.message_dict.get('order_num', None)
 		if isinstance(order_num, str):
-			try:
-				result_dict = self.rr_surfer.download_file(order_num)
-				self.logger.info('RESULT DICT', result_dict)
-				if result_dict['error'] is None:
-					path_to_file = result_dict['path_to_download']
-					self.send('download', error=None, order_id=self.order_id, order_download_path=path_to_file)
-				else:
-					self.logger.error('error', result_dict['error'])
-					self.send('download', error=result_dict['error'], order_id=self.order_id)
-			except Exception as e:
-				self.logger.error('error: {}'.format(e))
+			result_dict = self.rr_surfer.download_file(order_num)
+			self.logger.info('RESULT DICT', result_dict)
+			if result_dict['error'] is None:
+				path_to_file = result_dict['path_to_download']
+				self.send('download', error=None, order_id=self.order_id, order_download_path=path_to_file)
+			else:
+				self.logger.error('error', result_dict['error'])
+				self.send('download', error=result_dict['error'], order_id=self.order_id)
 		else:
 			self.logger.error('error: order_num is not string')
 			self.send('download', error='300', order_id=self.order_id)

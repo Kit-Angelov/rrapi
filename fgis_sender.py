@@ -10,10 +10,13 @@ def send_answer(conn_param, message):
 
 	channel = connection.channel()
 
-	channel.queue_declare(queue=conn_param['queue'])
+	channel.queue_declare(queue=conn_param['queue'], durable=True)
 
 	channel.basic_publish(exchange='',
 	                      routing_key=conn_param['queue'],
-	                      body=message)
+	                      body=message,
+	                      properties=pika.BasicProperties(
+	                         delivery_mode = 2,
+	                      ))
 	print(" [x] Sent answer message: {}".format(message))
 	connection.close()
