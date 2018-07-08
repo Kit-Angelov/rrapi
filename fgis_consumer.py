@@ -22,7 +22,9 @@ def run(mode): # order, status or download
 
 	credentials = pika.PlainCredentials(conn_param['user'], conn_param['password'])
 
-	connection = pika.BlockingConnection(pika.ConnectionParameters(host=conn_param['host'], port=conn_param['port'], credentials=credentials))
+	connection = pika.BlockingConnection(pika.ConnectionParameters(host=conn_param['host'], 
+		                                                           virtual_host=conn_param['virtual_host'],
+		                                                           credentials=credentials))
 
 	channel = connection.channel()
 
