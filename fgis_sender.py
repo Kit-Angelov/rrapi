@@ -5,7 +5,7 @@ def send_answer(conn_param, message):
 	credentials = pika.PlainCredentials(conn_param['user'], conn_param['password'])
 
 	connection = pika.BlockingConnection(pika.ConnectionParameters(host=conn_param['host'],
-                                                                   port=conn_param['port'],
+                                                                   virtual_host=conn_param['virtual_host'],
                                                                    credentials=credentials))
 
 	channel = connection.channel()

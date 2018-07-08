@@ -7,9 +7,20 @@ order_queue_config = {
         'queue': 'rrd_order',
         'exchange': '',
         'routing_key': 'rrd_order'
+    },
+    '1cloudDev': {
+        'user': 'prqaihqx',
+        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
+        'host': 'black-boar.rmq.cloudamqp.com',
+        'port': 5672,
+        'queue': 'rrd_order',
+        'exchange': '',
+        'routing_key': 'rrd_order',
+        'virtual_host': 'prqaihqx'
     }
+
 }
-order_queue_param = order_queue_config['default']
+order_queue_param = order_queue_config['1cloudDev']
 
 check_queue_config = {
     'default': {
@@ -20,9 +31,19 @@ check_queue_config = {
         'queue': 'check_order',
         'exchange': '',
         'routing_key': 'check_order'
+    },
+    '1cloudDev': {
+        'user': 'prqaihqx',
+        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
+        'host': 'black-boar.rmq.cloudamqp.com',
+        'port': 5672,
+        'queue': 'check_order',
+        'exchange': '',
+        'routing_key': 'check_order',
+        'virtual_host': 'prqaihqx'
     }
 }
-check_queue_param = check_queue_config['default']
+check_queue_param = check_queue_config['1cloudDev']
 
 download_queue_config = {
     'default': {
@@ -33,9 +54,19 @@ download_queue_config = {
         'queue': 'download_order',
         'exchange': '',
         'routing_key': 'download_order'
+    },
+    '1cloudDev': {
+        'user': 'prqaihqx',
+        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
+        'host': 'black-boar.rmq.cloudamqp.com',
+        'port': 5672,
+        'queue': 'download_order',
+        'exchange': '',
+        'routing_key': 'download_order',
+        'virtual_host': 'prqaihqx'
     }
 }
-download_queue_param = download_queue_config['default']
+download_queue_param = download_queue_config['1cloudDev']
 
 mode_dict = {
 	'order': order_queue_param,
