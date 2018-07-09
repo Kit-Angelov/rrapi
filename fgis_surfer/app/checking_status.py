@@ -40,7 +40,8 @@ def check_status(driver, menu_orders, order_num):
 
 	logger.info('order status {}'.format(str(object_item.text)))
 	status_text = str(object_item.text).lower()
-	status_code = status_dict.get(status_text, 600)
+	logger.info('status text: {}'.format(status_text))
+	status_code = status_dict.get(status_text, None)
 	if status_code is not None:
 		logger.info('[FINISH] Finish checking status order: {}'.format(str(order_num)))
 		return {'error': None, 'status': status_code}
