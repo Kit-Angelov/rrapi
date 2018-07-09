@@ -47,4 +47,4 @@ def check_status(driver, menu_orders, order_num):
 		return {'error': None, 'status': status_code}
 	else:
 		logger.error('[ERROR] checking status order: {}'.format(str(order_num)))
-		return {'error': 'checking status error'}
+		return {'error': 'checking status error, status text: {}'.format(status_text)}
