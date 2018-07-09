@@ -6,6 +6,9 @@ from settings import mode_dict
 from loggerInit import init_logger
 import logging
 
+"""
+	Функция устанавливает соединение с очередью и слушает прослушивания сообщений в зависимости от мода 
+"""
 def run(mode): # order, status or download
 
 	conn_param = mode_dict.get(str(mode), None)
@@ -32,10 +35,11 @@ def run(mode): # order, status or download
 
 	logger.info(' [*] Start Consumer | Mode {}'.format(mode))
 
+	# функция колбека полученного сообщения
 	def receiver(ch, method, properties, body):
 	    logger.info(" [+] Received Message %r" % (body,))
-	    fgisWorker = FgisWorker(mode)
-	    fgisWorker.receive(body)
+	    fgisWorker = FgisWorker(mode) # обьект воркера с указанным модом
+	    fgisWorker.receive(body) # обработка полученного сообщения
 	    ch.basic_ack(delivery_tag = method.delivery_tag)
 
 

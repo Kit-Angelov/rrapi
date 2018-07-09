@@ -1,3 +1,5 @@
+# селекторы для селениума необходимые для поиска нужных полей
+
 # login
 token_input_class = 'v-textfield'
 enter_button_class = 'v-button-caption'

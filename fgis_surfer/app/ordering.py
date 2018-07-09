@@ -4,6 +4,7 @@ from . import constants
 import logging
 from .regions import REGIONS
 
+# функция оформления заявки, примает обьект драйвера, обьект пункта меню и кадастровый номер.
 def order_document(driver, menu_search, cad_num):
 	logger = logging.getLogger('order.fgis_core.ordering')
 	logger.info('[START] Start ordering document: {}'.format(str(cad_num)))

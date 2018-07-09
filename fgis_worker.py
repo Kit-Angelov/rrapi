@@ -5,29 +5,32 @@ import json
 import logging
 
 
+"""
+	Класс воркера
+"""
 class FgisWorker:
 
 	def __init__(self, mode):
-		self.mode = mode
-		self.logger = logging.getLogger(self.mode + '.fgis_worker')
-		self.conn_param = mode_dict.get(str(self.mode), None)
-		self.methods = {
+		self.mode = mode # мод работы
+		self.logger = logging.getLogger(self.mode + '.fgis_worker') # инициализация логгера
+		self.conn_param = mode_dict.get(str(self.mode), None) # параметры соединения
+		self.methods = {                # методы обработки сообщений
 			'to_order': self.to_order,
 			'get_status': self.get_status,
 			'download': self.download
 		}
-		self.answer_types = {
+		self.answer_types = {            # методы создания ответных сообщений
 			'to_order': self.answer_to_order,
 			'get_status': self.answer_get_status,
 			'download': self.answer_download
 		}
-		self.fgis_token = str()
-		self.message_dict = dict()
-		self.answer_queue = str()
-		self.rr_surfer = object()
-		self.order_id = int()
+		self.fgis_token = str() # токен фгис
+		self.message_dict = dict() # полученно сообщения - словарь
+		self.answer_queue = str() # имя ответной очереди из полученного сообщения берется
+		self.rr_surfer = object() # будущий обьект класса серфера по сервису росреестра
+		self.order_id = int() # id заявки
 
-	def get_status(self):
+	def get_status(self): # проверка статуса заявки
 		order_num = self.message_dict.get('order_num', None)
 		if isinstance(order_num, str):
 			try:
@@ -45,7 +48,7 @@ class FgisWorker:
 			self.logger.error('error: order_num is not string')
 			self.send('get_status', error='300', order_id=self.order_id)
 
-	def to_order(self):
+	def to_order(self): # оформление заявки
 		cad_num = self.message_dict.get('cad_num', None)
 		if isinstance(cad_num, str):
 			result_dict = self.rr_surfer.order_document(cad_num)
@@ -60,7 +63,7 @@ class FgisWorker:
 			self.logger.error('error: cad_num is not string')
 			self.send('to_order', error='300', order_id=self.order_id)
 
-	def download(self):
+	def download(self): # скачивание документа выполненной заявки
 		order_num = self.message_dict.get('order_num', None)
 		if isinstance(order_num, str):
 			result_dict = self.rr_surfer.download_file(order_num)
@@ -75,7 +78,7 @@ class FgisWorker:
 			self.logger.error('error: order_num is not string')
 			self.send('download', error='300', order_id=self.order_id)
 			
-	def receive(self, body):
+	def receive(self, body): # обработчик входящих сообщений
 		self.message_dict = json.loads(body)
 		self.fgis_token = self.message_dict.get('fgis_token', None)
 		self.answer_queue = self.message_dict.get('answer_queue', None)
@@ -91,7 +94,7 @@ class FgisWorker:
 			self.logger.error('error: not fgis_token or method or order_id')
 			self.send('common', error='400', order_id=self.order_id)
 
-	def answer_error(self, answer_type, error, order_id):
+	def answer_error(self, answer_type, error, order_id): # формирование ответного сообщения с ошибкой
 		answer = {
 			'answer_type': answer_type,
 			'order_id': order_id,
@@ -100,7 +103,7 @@ class FgisWorker:
 		answer_json = json.dumps(answer)
 		send_answer(self.conn_param, answer_json)
 
-	def answer_to_order(self, answer_type, **data):
+	def answer_to_order(self, answer_type, **data): # формирование ответного сообщения об оформлении заявки
 		answer = {
 			'answer_type': answer_type,
 			'order_id': data['order_id'],
@@ -109,7 +112,7 @@ class FgisWorker:
 		answer_json = json.dumps(answer)
 		send_answer(self.conn_param, answer_json)
 
-	def answer_get_status(self, answer_type, **data):
+	def answer_get_status(self, answer_type, **data): # формирование ответного сообщения о проверки статуса заявки
 		answer = {
 			'answer_type': answer_type,
 			'order_id': data['order_id'],
@@ -118,7 +121,7 @@ class FgisWorker:
 		answer_json = json.dumps(answer)
 		send_answer(self.conn_param, answer_json)
 
-	def answer_download(self, answer_type, **data):
+	def answer_download(self, answer_type, **data): # формирование ответного сообщения о скачивании докуента заявки
 		answer = {
 			'answer_type': answer_type,
 			'order_id': data['order_id'],
@@ -127,7 +130,7 @@ class FgisWorker:
 		answer_json = json.dumps(answer)
 		send_answer(self.conn_param, answer_json)
 
-	def send(self, answer_type, error=None, **data):
+	def send(self, answer_type, error=None, **data): # метод отправки сообщения - определяет какой ответ формировать
 		if error is not None:
 			self.answer_error(answer_type=answer_type, error=error, order_id=data['order_id'])
 		else:

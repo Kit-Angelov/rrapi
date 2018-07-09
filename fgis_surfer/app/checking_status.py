@@ -4,6 +4,7 @@ from . import constants
 from .config import status_dict
 import logging
 
+# функция проврки статуса, принимает обьект драйвера, обьект пункта меню и номер заявки
 def check_status(driver, menu_orders, order_num):
 	logger = logging.getLogger('status.fgis_core.checking_status')
 

@@ -1,3 +1,6 @@
+# конфиги к очередям (обьедини их с переприсваиванием если хочешь)
+
+# конфиг к очереди заказа
 order_queue_config = {
     'default': {
         'user': 'rrd_user',
@@ -22,6 +25,7 @@ order_queue_config = {
 }
 order_queue_param = order_queue_config['1cloudDev']
 
+# конфиг к очереди проверки статуса
 check_queue_config = {
     'default': {
         'user': 'rrd_user',
@@ -45,6 +49,7 @@ check_queue_config = {
 }
 check_queue_param = check_queue_config['1cloudDev']
 
+# конфиг к очереди скачивания документа
 download_queue_config = {
     'default': {
         'user': 'rrd_user',
@@ -68,6 +73,7 @@ download_queue_config = {
 }
 download_queue_param = download_queue_config['1cloudDev']
 
+# словарь режимов работы воркера и соответсвущих конфигов очереди
 mode_dict = {
 	'order': order_queue_param,
 	'status': check_queue_param,

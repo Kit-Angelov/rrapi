@@ -1,12 +1,12 @@
 import os
 
-token = ""
-rr_url = 'https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn'
-base_dir = os.getcwd()
-dir_to_ftp = '/home/ftpuser'
-media_path = 'media'
+token = "" # токен фгис
+rr_url = 'https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn' # юрл к сервису фгис росреестра
+base_dir = os.getcwd() # базовая директория
+dir_to_ftp = '/home/ftpuser' # путь до фтп папки
+media_path = 'media' # путь до медии
 
-# checking status
+# статусы фгис: код статуса в нашей системе
 status_dict = {
 	'на проверке': 200,
 	'создана': 300,

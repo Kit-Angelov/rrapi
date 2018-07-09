@@ -1,6 +1,8 @@
 import pika
 
-
+"""
+	Функция отправки ответного сообщения
+"""
 def send_answer(conn_param, message):
 	credentials = pika.PlainCredentials(conn_param['user'], conn_param['password'])
 

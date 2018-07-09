@@ -6,6 +6,7 @@ import requests
 import uuid
 import logging
 
+# функция скачивания документа выполненой заявки, принимает обьект драйвера, обьект пунка меню и номер заявки
 def download(driver, menu_orders, order_num):
 	logger = logging.getLogger('download.fgis_core.downloading')
 
