@@ -53,7 +53,7 @@ def order_document(driver, menu_search, cad_num):
 
 	logger.info('click search button')
 
-	utils.sleep()
+	utils.sleep(5)
 
 	# получени результата поиска (1ый результат)
 	try:
