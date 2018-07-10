@@ -31,7 +31,7 @@ def run(mode): # order, status or download
 
 	channel = connection.channel()
 
-	channel.queue_declare(queue=conn_param['queue'], durable=True)
+	channel.queue_declare(queue=conn_param['queue'])
 
 	logger.info(' [*] Start Consumer | Mode {}'.format(mode))
 
