@@ -1,0 +1,9 @@
+certifi==2018.4.16
+chardet==3.0.4
+idna==2.7
+pika==0.12.0
+pkg-resources==0.0.0
+requests==2.19.1
+selenium==3.12.0
+urllib3==1.23
+wget==3.2
