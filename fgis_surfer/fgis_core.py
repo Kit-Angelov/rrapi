@@ -33,7 +33,7 @@ class RRSurfer:
 		self.logger.info('start login')
 		self.login() # авторизация фгис по токену
 		self.logger.info('finish login')
-		utils.sleep()
+		utils.sleep(3)
 
 		# получение элеменов меню
 		self.logger.info('getting menu links')

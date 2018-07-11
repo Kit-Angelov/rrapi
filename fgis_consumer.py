@@ -31,7 +31,7 @@ def run(mode): # order, status or download
 
 	channel = connection.channel()
 
-	channel.queue_declare(queue=conn_param['queue'])
+	channel.queue_declare(queue=conn_param['queue'], durable=True)
 
 	logger.info(' [*] Start Consumer | Mode {}'.format(mode))
 
@@ -42,7 +42,7 @@ def run(mode): # order, status or download
 	    fgisWorker.receive(body) # обработка полученного сообщения
 	    ch.basic_ack(delivery_tag = method.delivery_tag)
 
-
+	channel.basic_qos(prefetch_count=1)
 	channel.basic_consume(receiver,
 	                      queue=conn_param['queue'])
 
