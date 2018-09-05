@@ -79,3 +79,5 @@ mode_dict = {
 	'status': check_queue_param,
 	'download': download_queue_param
 }
+
+SENTRY_DSN = 'https://0ef101441e8d42f395a43feabd828e7e:e1060eea3c624f88b66fd7cc6f85ccc3@sentry.io/1274958'
