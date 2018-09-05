@@ -97,45 +97,64 @@ my_account = menu_links[3]
 
 # переходим в раздел поиска документов
 orders.click()
-sleep(10)
+# sleep(10)
+
+def limiter(func, param, ident=None):
+	before = time.time()
+	def execute():
+		try:
+			result = func(param)
+			print(result)
+			if ident is not None:
+				result = result[ident] #  driver.find_elements_by_class_name(search_order_class)[0]
+			return result
+		except Exception as e:
+			print("NO")
+			after = time.time()
+			print(after - before)
+			if (after - before) > 30:
+				return None
+			return execute()
+	return execute()
+
+search_order_field = limiter(driver.find_elements_by_class_name, search_order_class, 0)
 
 make_screen(driver)
 
-# поиск запроса по номеру
-search_order_field = driver.find_elements_by_class_name(search_order_class)[0]
 search_order_field.send_keys(order_num)
 
 sleep(2)
 make_screen(driver)
 
-search_order_button = driver.find_elements_by_class_name(search_button_class)[5]
-search_order_button.click()
+# search_order_button = driver.find_elements_by_class_name(search_button_class)[5]
+# search_order_button.click()
 
-sleep(2)
-make_screen(driver)
+# sleep(2)
+# make_screen(driver)
 
-# список запросов на выписки
-table_elem = driver.find_element_by_class_name(table_orders_class)
-object_list = table_elem.find_elements_by_tag_name('tr')
-print('len obj list', len(object_list))
-object_item = object_list[0].find_elements_by_class_name(table_cell_class)[2]
+# # список запросов на выписки
+# table_elem = driver.find_element_by_class_name(table_orders_class)
+# object_list = table_elem.find_elements_by_tag_name('tr')
+# print('len obj list', len(object_list))
+# object_item = object_list[0].find_elements_by_class_name(table_cell_class)[2]
 
-print(object_item.text)
-link_elem = object_list[0].find_element_by_tag_name('a')
+# print(object_item.text)
+# link_elem = object_list[0].find_element_by_tag_name('a')
 
-link = link_elem.get_attribute('href')
-print('link', link)
+# link = link_elem.get_attribute('href')
+# print('link', link)
 
-sleep(5)
-make_screen(driver)
+# sleep(5)
+# make_screen(driver)
 
-session = requests.Session()
-cookies = driver.get_cookies()
-for cookie in cookies: 
-    session.cookies.set(cookie['name'], cookie['value'])
-response = session.get(link)
+# session = requests.Session()
+# cookies = driver.get_cookies()
+# for cookie in cookies: 
+#     session.cookies.set(cookie['name'], cookie['value'])
+# response = session.get(link)
 
-path_to_download = 'doc.zip'
-if response.status_code == 200:
-    with open(path_to_download, 'wb') as f:
-        f.write(response.content)
+# path_to_download = 'doc.zip'
+# if response.status_code == 200:
+#     with open(path_to_download, 'wb') as f:
+#         f.write(response.content)
+

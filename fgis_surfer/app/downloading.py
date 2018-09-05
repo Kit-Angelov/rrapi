@@ -14,28 +14,19 @@ def download(driver, menu_orders, order_num):
 
 	# переходим в раздел поиска документов
 	menu_orders.click()
-	utils.sleep(10)
 
 	# поиск запроса по номеру
-	search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
-	logger.info('getting search order field')
+	search_order_field = utils.limiter(driver.find_elements_by_class_name, constants.textfield_class, 0)
 	search_order_field.send_keys(order_num)
-	logger.info('fill search order field')
-	utils.sleep(2)
 
-	search_order_button = driver.find_elements_by_class_name(constants.button_class)[5]
-	logger.info('getting search order button')
+	search_order_button = utils.limiter(driver.find_elements_by_class_name, constants.button_class, 5)
 	search_order_button.click()
-	logger.info('search order button click')
-
-	utils.sleep(2)
 
 	# список запросов на выписки
-	table_elem = driver.find_element_by_class_name(constants.table_order_class)
+	table_elem = utils.limiter(driver.find_element_by_class_name, constants.table_order_class)
 	try:
 		object_list = table_elem.find_elements_by_tag_name('tr')
 		object_item = object_list[0].find_elements_by_class_name(constants.table_order_cell_class)[2]
-		logger.info('getting object item')
 
 		link_elem = object_list[0].find_element_by_tag_name('a')
 

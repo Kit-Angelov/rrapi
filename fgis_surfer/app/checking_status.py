@@ -12,36 +12,24 @@ def check_status(driver, menu_orders, order_num):
 
 	# переходим в раздел поиска документов
 	menu_orders.click()
-	logger.info('menu orders click')
-	utils.sleep(15)
 
 	# поиск запроса по номеру
-	search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
-	logger.info('getting search order field')
+	search_order_field = utils.limiter(driver.find_elements_by_class_name, constants.textfield_class, 0)
 	search_order_field.send_keys(order_num)
-	logger.info('fill search order field')
-	utils.sleep()
 
-	search_order_button = driver.find_elements_by_class_name(constants.button_class)[5]
-	logger.info('getting search order button')
+	search_order_button = utils.limiter(driver.find_elements_by_class_name, constants.button_class, 5)
 	search_order_button.click()
-	logger.info('search order button click')
-
-	utils.sleep()
 
 	# список запросов на выписки
-	table_elem = driver.find_element_by_class_name(constants.table_order_class)
+	table_elem = utils.limiter(driver.find_element_by_class_name, constants.table_order_class)
 	try:
 		object_list = table_elem.find_elements_by_tag_name('tr')
 		object_item = object_list[0].find_elements_by_class_name(constants.table_order_cell_class)[2]
-		logger.info('getting object item')
 	except Exception as e:
 		logger.error('[ERROR] checking status order: {}'.format(str(order_num)))
 		return {'error': 'no order for check status'}
 
-	logger.info('order status {}'.format(str(object_item.text)))
 	status_text = str(object_item.text).lower()
-	logger.info('status text: {}'.format(status_text))
 	status_code = status_dict.get(status_text, None)
 	if status_code is not None:
 		logger.info('[FINISH] Finish checking status order: {}'.format(str(order_num)))
