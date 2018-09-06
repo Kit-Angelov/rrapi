@@ -1,14 +1,17 @@
 import logging
 import logging.config
-from .settings import SENTRY_DSN
+from settings import SENTRY_DSN
 import os
 
 def init_logger(mode):
 	logger_name = str(mode)
 
-	BASE_DIR = os.path.dirname(os.path.dirname(__file__))  #Базовая директория приложения
+	BASE_DIR = os.path.dirname(__file__)  #Базовая директория приложения
  
 	LOG_DIR = os.path.join(BASE_DIR, 'logs', logger_name)  # Директория с файлами логов
+
+	if os.path.exists(LOG_DIR) is False:
+		os.makedirs(LOG_DIR)
 
 	dictLogConfig = {
 	    'version': 1,

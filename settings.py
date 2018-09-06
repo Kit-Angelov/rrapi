@@ -3,13 +3,14 @@
 # конфиг к очереди заказа
 order_queue_config = {
     'default': {
-        'user': 'rrd_user',
-        'password': 'rrd_user',
-        'host': '192.168.2.233',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'rrd_order',
         'exchange': '',
-        'routing_key': 'rrd_order'
+        'routing_key': 'rrd_order',
+        'virtual_host': '/'
     },
     '1cloudDev': {
         'user': 'prqaihqx',
@@ -23,18 +24,19 @@ order_queue_config = {
     }
 
 }
-order_queue_param = order_queue_config['1cloudDev']
+order_queue_param = order_queue_config['default']
 
 # конфиг к очереди проверки статуса
 check_queue_config = {
     'default': {
-        'user': 'rrd_user',
-        'password': 'rrd_user',
-        'host': '192.168.2.233',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'check_order',
         'exchange': '',
-        'routing_key': 'check_order'
+        'routing_key': 'check_order',
+        'virtual_host': '/'
     },
     '1cloudDev': {
         'user': 'prqaihqx',
@@ -47,18 +49,19 @@ check_queue_config = {
         'virtual_host': 'prqaihqx'
     }
 }
-check_queue_param = check_queue_config['1cloudDev']
+check_queue_param = check_queue_config['default']
 
 # конфиг к очереди скачивания документа
 download_queue_config = {
     'default': {
-        'user': 'rrd_user',
-        'password': 'rrd_user',
-        'host': '192.168.2.233',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'download_order',
         'exchange': '',
-        'routing_key': 'download_order'
+        'routing_key': 'download_order',
+        'virtual_host': '/'
     },
     '1cloudDev': {
         'user': 'prqaihqx',
@@ -71,7 +74,7 @@ download_queue_config = {
         'virtual_host': 'prqaihqx'
     }
 }
-download_queue_param = download_queue_config['1cloudDev']
+download_queue_param = download_queue_config['default']
 
 # словарь режимов работы воркера и соответсвущих конфигов очереди
 mode_dict = {

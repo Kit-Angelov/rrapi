@@ -24,6 +24,7 @@ class RRSurfer:
 	def init_driver(self):
 		self.logger.info('start driver init')
 		self.driver = webdriver.PhantomJS() # инициализация веб-драйвера
+		self.driver.implicitly_wait(30)
 		self.logger.info('init driver ok')
 		self.driver.set_window_size(840, 480)
 		self.logger.info('set window_size')
