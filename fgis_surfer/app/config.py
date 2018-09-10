@@ -19,7 +19,7 @@ other_param = {
     },
     'kt': {
         'base_dir': os.getcwd(), # базовая директория
-        'dir_to_ftp': '/home/ftpuser', # путь до фтп папки
+        'dir_to_ftp': '/mnt/rrd/ordered', # путь до фтп папки
         'media_path': 'media', # путь до медии
     },
     'prod': {
