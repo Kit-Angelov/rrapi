@@ -13,24 +13,24 @@ order_queue_config = {
         'virtual_host': '/'
     },
     'kt': {
-        'user': 'prqaihqx',
-        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
-        'host': 'black-boar.rmq.cloudamqp.com',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'rrd_order',
         'exchange': '',
         'routing_key': 'rrd_order',
-        'virtual_host': 'prqaihqx'
+        'virtual_host': '/'
     },
     'prod': {
-        'user': 'prqaihqx',
-        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
-        'host': 'black-boar.rmq.cloudamqp.com',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'rrd_order',
         'exchange': '',
         'routing_key': 'rrd_order',
-        'virtual_host': 'prqaihqx'
+        'virtual_host': '/'
     }
 
 }
@@ -49,24 +49,24 @@ check_queue_config = {
         'virtual_host': '/'
     },
     'kt': {
-        'user': 'prqaihqx',
-        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
-        'host': 'black-boar.rmq.cloudamqp.com',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'check_order',
         'exchange': '',
         'routing_key': 'check_order',
-        'virtual_host': 'prqaihqx'
+        'virtual_host': '/'
     },
     'prod': {
-        'user': 'prqaihqx',
-        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
-        'host': 'black-boar.rmq.cloudamqp.com',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'check_order',
         'exchange': '',
         'routing_key': 'check_order',
-        'virtual_host': 'prqaihqx'
+        'virtual_host': '/'
     }
 }
 check_queue_param = check_queue_config
@@ -84,24 +84,24 @@ download_queue_config = {
         'virtual_host': '/'
     },
     'kt': {
-        'user': 'prqaihqx',
-        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
-        'host': 'black-boar.rmq.cloudamqp.com',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'download_order',
         'exchange': '',
         'routing_key': 'download_order',
-        'virtual_host': 'prqaihqx'
+        'virtual_host': '/'
     },
     'prod': {
-        'user': 'prqaihqx',
-        'password': '3aMGiZ2tpYcm4ZGUzcvWEx_SfP4UCg80',
-        'host': 'black-boar.rmq.cloudamqp.com',
+        'user': 'admin',
+        'password': 'itt0root',
+        'host': 'localhost',
         'port': 5672,
         'queue': 'download_order',
         'exchange': '',
         'routing_key': 'download_order',
-        'virtual_host': 'prqaihqx'
+        'virtual_host': '/'
     }
 }
 download_queue_param = download_queue_config
