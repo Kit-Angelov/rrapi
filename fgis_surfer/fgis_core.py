@@ -14,8 +14,9 @@ import logging
 # главный класс инициализирует соединение, логинится и получает список элементов меню
 class RRSurfer:
 
-	def __init__(self, token, log_mode=None):
+	def __init__(self, token, log_mode=None, env=None):
 		self.token = token
+		self.env = env
 		if log_mode is not None:
 			self.logger = logging.getLogger(str(log_mode) + '.fgis_core')
 		else:
@@ -79,7 +80,7 @@ class RRSurfer:
 	# метод скачивания документа выполненной заявки
 	def download_file(self, order_num):
 		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
-		result_dict = downloading.download(self.driver, self.menu_orders, order_num)
+		result_dict = downloading.download(self.driver, self.menu_orders, order_num, self.env)
 		return result_dict
 
 

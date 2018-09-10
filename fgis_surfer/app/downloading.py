@@ -7,7 +7,7 @@ import uuid
 import logging
 
 # функция скачивания документа выполненой заявки, принимает обьект драйвера, обьект пунка меню и номер заявки
-def download(driver, menu_orders, order_num):
+def download(driver, menu_orders, order_num, env):
 	logger = logging.getLogger('download.fgis_core.downloading')
 
 	logger.info('[START] Start downloading doc: {}'.format(str(order_num)))
@@ -15,15 +15,17 @@ def download(driver, menu_orders, order_num):
 	# переходим в раздел поиска документов
 	menu_orders.click()
 
+	utils.sleep(15)
 	# поиск запроса по номеру
-	search_order_field = utils.limiter(driver.find_elements_by_class_name, constants.textfield_class, 0)
+	search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
 	search_order_field.send_keys(order_num)
 
-	search_order_button = utils.limiter(driver.find_elements_by_class_name, constants.button_class, 5)
+	search_order_button = driver.find_elements_by_class_name(constants.button_class)[5]
 	search_order_button.click()
 
+	utils.sleep(5)
 	# список запросов на выписки
-	table_elem = utils.limiter(driver.find_element_by_class_name, constants.table_order_class)
+	table_elem = driver.find_element_by_class_name(constants.table_order_class)
 	try:
 		object_list = table_elem.find_elements_by_tag_name('tr')
 		object_item = object_list[0].find_elements_by_class_name(constants.table_order_cell_class)[2]
@@ -41,7 +43,7 @@ def download(driver, menu_orders, order_num):
 	    session.cookies.set(cookie['name'], cookie['value'])
 	response = session.get(link)
 
-	dir_to_download = os.path.join(config.dir_to_ftp, config.media_path)
+	dir_to_download = os.path.join(config.other_param[env]['dir_to_ftp'], config.other_param[env]['media_path'])
 	if os.path.isdir(dir_to_download) is False:
 		os.mkdir(dir_to_download)
 
@@ -52,7 +54,7 @@ def download(driver, menu_orders, order_num):
 
 	name_file = '{0}{1}'.format(str(order_num), '.zip')
 	path_to_download = os.path.join(inter_path, name_file) # абсолютный путь
-	rel_path_to_download = os.path.join(config.media_path, inter_dir, name_file) # относительный путь
+	rel_path_to_download = os.path.join(config.other_param[env]['media_path'], inter_dir, name_file) # относительный путь
 
 	if response.status_code == 200:
 		with open(path_to_download, 'wb') as f:

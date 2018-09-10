@@ -10,10 +10,11 @@ import logging
 """
 class FgisWorker:
 
-	def __init__(self, mode):
+	def __init__(self, mode, env):
 		self.mode = mode # мод работы
+		self.env = env # имя окружения
 		self.logger = logging.getLogger(self.mode + '.fgis_worker') # инициализация логгера
-		self.conn_param = mode_dict.get(str(self.mode), None) # параметры соединения
+		self.conn_param = mode_dict.get(str(self.mode), None).get(str(self.env), None) # параметры соединения
 		self.methods = {                # методы обработки сообщений
 			'to_order': self.to_order,
 			'get_status': self.get_status,
@@ -87,7 +88,7 @@ class FgisWorker:
 		method = self.message_dict.get('method', None)
 
 		if (self.fgis_token is not None) and (method in self.methods) and (self.order_id is not None):
-			self.rr_surfer = RRSurfer(self.fgis_token, log_mode=self.mode)
+			self.rr_surfer = RRSurfer(self.fgis_token, log_mode=self.mode, env=self.env)
 			worker_method = self.methods[method]
 			worker_method()
 		else:

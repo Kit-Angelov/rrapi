@@ -1,9 +1,9 @@
 import logging
 import logging.config
-from settings import SENTRY_DSN
+from settings import other_param
 import os
 
-def init_logger(mode):
+def init_logger(mode, env):
 	logger_name = str(mode)
 
 	BASE_DIR = os.path.dirname(__file__)  #Базовая директория приложения
@@ -46,7 +46,7 @@ def init_logger(mode):
 	        'sentry': {                            # обработчик логов для отправки в облачное приложения ведения логов sentry.io
 	            'level': 'INFO',
 	            'class': 'raven.handlers.logging.SentryHandler',
-	            'dsn': SENTRY_DSN,
+	            'dsn': other_param[env]['SENTRY_DSN'],
 	            },
 	        },
 	 
