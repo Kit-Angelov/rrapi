@@ -1,0 +1,10 @@
+[10:56:00][INFO] status fgis_consumer.py:run:45 |  [*] Start Consumer | Mode status
+[10:56:00][INFO] status fgis_consumer.py:receiver:49 |  [+] Received Message b'{"method": "get_status", "order_id": 7, "order_num": "80-52537965", "fgis_token": "1d9deb88-8d5f-40a4-a58e-b9520430d053", "answer_queue": "answer_order"}'
+[10:56:00][INFO] status.fgis_core fgis_core.py:init_driver:26 | start driver init
+[10:56:00][INFO] status fgis_consumer.py:run:45 |  [*] Start Consumer | Mode status
+[10:56:00][INFO] status fgis_consumer.py:run:45 |  [*] Start Consumer | Mode status
+[10:56:03][INFO] status.fgis_core fgis_core.py:init_driver:29 | init driver ok
+[10:56:03][INFO] status.fgis_core fgis_core.py:init_driver:31 | set window_size
+[10:57:03][INFO] status.fgis_core fgis_core.py:init_driver:33 | open url https://rosreestr.ru/wps/portal/p/cc_present/ir_egrn
+[10:57:03][INFO] status.fgis_core fgis_core.py:init_driver:35 | start login
+[10:57:33][ERROR] status.fgis_worker fgis_worker.py:get_status:47 | error: list index out of range

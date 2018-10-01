@@ -19,8 +19,8 @@ other_param = {
     },
     'kt': {
         'base_dir': os.getcwd(), # базовая директория
-        'dir_to_ftp': '/mnt/rrd/ordered', # путь до фтп папки
-        'media_path': 'media', # путь до медии
+        'dir_to_ftp': '/home/user', # путь до фтп папки
+        'media_path': 'rrd_ordered/media', # путь до медии
     },
     'prod': {
         'base_dir': os.getcwd(), # базовая директория

@@ -67,21 +67,36 @@ class RRSurfer:
 	# метод поиска и заказа документа по кадастровому номеру(принимает на вход). 
 	# Возвращает номер заявки.
 	def order_document(self, cad_num):
-		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
-		result_dict = ordering.order_document(self.driver, self.menu_search, cad_num)
-		return result_dict
+		try:
+			self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
+			result_dict = ordering.order_document(self.driver, self.menu_search, cad_num)
+			return result_dict
+		except Exception as e:
+			self.logger.error(e)
+			self.driver.quit()
+			os.exit(1)
 
 	# метод проверки статуса заявки по номеру заявки
 	def get_status(self, order_num):
-		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
-		result_dict = checking_status.check_status(self.driver, self.menu_orders, order_num)
-		return result_dict
+		try:
+			self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
+			result_dict = checking_status.check_status(self.driver, self.menu_orders, order_num)
+			return result_dict
+		except Exception as e:
+			self.logger.error(e)
+			self.driver.quit()
+			os.exit(1)
 
 	# метод скачивания документа выполненной заявки
 	def download_file(self, order_num):
-		self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
-		result_dict = downloading.download(self.driver, self.menu_orders, order_num, self.env)
-		return result_dict
+		try:
+			self.init_driver() # инициализация драйвера на каждую из операций, т.к. нож в печень- токен не вечен.
+			result_dict = downloading.download(self.driver, self.menu_orders, order_num, self.env)
+			return result_dict
+		except Exception as e:
+			self.logger.error(e)
+			self.driver.quit()
+			os.exit(1)
 
 
 if __name__ == '__main__':

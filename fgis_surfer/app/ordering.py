@@ -15,28 +15,51 @@ def order_document(driver, menu_search, cad_num):
 	# ввод кад.номера и региона и поиск документа
 	cad_num_input = driver.find_element_by_xpath("//input[contains(concat(' ',normalize-space(@class),' '),' {} ')]".format(constants.textfield_class))
 	# cad_num_input = driver.find_element_by_class_name(constants.textfield_class)
-	cad_num_input.send_keys(cad_num)
+	try:
+		cad_num_input.send_keys(cad_num)
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 
 	region_input = driver.find_element_by_class_name(constants.filterselect_input_class)
+	try:
+		region_code = cad_num[:2]
+		region_name = REGIONS.get(str(region_code), None)
+		if region_name is None:
+			logger.error("invalid region code")
+			return {'error': 'invalid region code'}
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 
-	region_code = cad_num[:2]
-	region_name = REGIONS.get(str(region_code), None)
-	if region_name is None:
-		logger.error("invalid region code")
-		return {'error': 'invalid region code'}
-
-	logger.error("region name: {}".format(str(region_name)))
-	region_input.send_keys(region_name)
+	logger.info("region name: {}".format(str(region_name)))
+	try:
+		region_input.send_keys(region_name)
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 	utils.sleep(5)
 
 	region_popup_elems = driver.find_elements_by_class_name(constants.popup_class)
-
-	region_popup_elems[0].click()
+	try:
+		region_popup_elems[0].click()
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 	utils.sleep(5)
 
 	search_buttons = driver.find_elements_by_class_name(constants.button_class)
 
-	search_buttons[5].click()
+	try:
+		search_buttons[5].click()
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 	utils.sleep(5)
 
 	# получени результата поиска (1ый результат)
@@ -46,18 +69,33 @@ def order_document(driver, menu_search, cad_num):
 		logger.error('[ERROR] Error ordering document: {}'.format(str(cad_num)))
 		return {'error': 'no result for search doc'}
 
-	table_result_rows.click()
+	try:
+		table_result_rows.click()
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 	utils.sleep(5)
 
 	# заказываем документ
 	create_order_buttons = driver.find_elements_by_class_name(constants.button_class)[4]
 
-	create_order_buttons.click()
+	try:
+		create_order_buttons.click()
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 	utils.sleep(5)
 
 	# получение номера заявки
 	order_num_elem = driver.find_elements_by_class_name(constants.order_num_class)[3]
-	order_num = order_num_elem.find_element_by_tag_name('b').text
+	try:
+		order_num = order_num_elem.find_element_by_tag_name('b').text
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 
 	if order_num is not None:
 		logger.info('[FINISH] Finish ordering document: {}'.format(str(cad_num)))

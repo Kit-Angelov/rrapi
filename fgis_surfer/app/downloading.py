@@ -13,12 +13,22 @@ def download(driver, menu_orders, order_num, env):
 	logger.info('[START] Start downloading doc: {}'.format(str(order_num)))
 
 	# переходим в раздел поиска документов
-	menu_orders.click()
+	try:
+		menu_orders.click()
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 
 	utils.sleep(15)
 	# поиск запроса по номеру
-	search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
-	search_order_field.send_keys(order_num)
+	try:
+		search_order_field = driver.find_elements_by_class_name(constants.textfield_class)[0]
+		search_order_field.send_keys(order_num)
+	except Exception as e:
+		self.logger.error(e)
+		self.driver.quit()
+		os.exit(1)
 
 	search_order_button = driver.find_elements_by_class_name(constants.button_class)[5]
 	search_order_button.click()
